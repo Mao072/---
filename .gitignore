@@ -1,0 +1,38 @@
+# User Documentation & Specifications
+*.pdf
+SPECIFICATION.md
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Backend (Java/Spring Boot)
+target/
+ecommerce-backend/target/
+**/target/
+*.class
+*.jar
+*.war
+
+# Frontend (Node/Vue)
+node_modules/
+ecommerce-frontend/node_modules/
+**/node_modules/
+dist/
+ecommerce-frontend/dist/
+**/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
