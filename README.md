@@ -5,9 +5,11 @@
 資料庫連線: 在 ecommerce-backend\src\main\resources\application.yml 設定 
 
 其中9~11行
+```
     url: jdbc:mysql://localhost:3306/ecommerce_db
     username: root
     password: 您的密碼 
+```
 
 ### 啟動後端 (Port 8080)
 ```
@@ -15,10 +17,13 @@ cd ecommerce-backend
 mvn spring-boot:run
 ```
 若8080已被占用，一樣在 ecommerce-backend\src\main\resources\application.yml 設定 
+
+```
 server:
   port: 8080 //可改成8081
+```
 
-### 5. 啟動前端 (Port 5173)
+### 啟動前端 (Port 5173)
 
 ```
 cd ecommerce-frontend
@@ -35,7 +40,7 @@ npm run dev
 | 會員 | user1 | password123 |
 
 
-## 📁 專案結構
+## 專案結構
 
 ```
 E-commerce/
@@ -65,7 +70,7 @@ E-commerce/
 
 ---
 
-## 🔒 資安實作
+## 資安實作
 
 | 攻擊類型 | 防護措施 |
 |----------|----------|
@@ -75,7 +80,7 @@ E-commerce/
 
 ---
 
-## 📡 API 端點
+##  API 端點
 
 | Method | Endpoint | 權限 | 說明 |
 |--------|----------|------|------|
