@@ -16,7 +16,7 @@
 ddl.sql, stored_procedures.sql, dml.sql
 
 
-### 啟動後端 (Port 8080)
+## 啟動後端 (Port 8080)
 ```
 cd ecommerce-backend
 mvn spring-boot:run
@@ -28,7 +28,7 @@ server:
   port: 8080 //可改成8081
 ```
 
-### 啟動前端 (Port 5173)
+## 啟動前端 (Port 5173)
 
 ```
 cd ecommerce-frontend
