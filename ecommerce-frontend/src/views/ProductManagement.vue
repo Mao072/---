@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="page-title">
-      <h2>🏷️ 商品管理</h2>
+      <h2> 商品管理</h2>
       <button class="btn btn-primary" @click="showModal = true">
-        ➕ 新增商品
+         新增商品
       </button>
     </div>
     
@@ -46,7 +46,7 @@
                   style="background: #4a5568; color: white; padding: 4px 12px;"
                   @click="openRestockModal(product)"
                 >
-                  📦 補貨
+                    補貨
                 </button>
               </td>
             </tr>

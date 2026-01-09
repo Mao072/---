@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="page-title">
-      <h2>📦 訂單管理</h2>
+      <h2> 訂單管理</h2>
     </div>
     
     <!-- User View: Create Order -->
     <div v-if="!isAdmin" class="card" style="margin-bottom: 24px;">
-      <h3 style="margin-bottom: 20px;">🛍️ 選購商品</h3>
+      <h3 style="margin-bottom: 20px;"> 選購商品</h3>
       
       <div v-if="loadingProducts" class="loading">
         <div class="spinner"></div>
@@ -48,7 +48,7 @@
       
       <!-- Cart Summary -->
       <div v-if="cartTotal > 0" class="cart-summary">
-        <h3>🛒 購物車明細</h3>
+        <h3> 購物車明細</h3>
         <div style="margin-bottom: 16px;">
           <div v-for="item in cartItems" :key="item.productId" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
             <span>{{ item.name }} x {{ item.quantity }}</span>
@@ -67,7 +67,7 @@
     <!-- Orders List -->
     <div class="card">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h3 style="margin: 0;">{{ isAdmin ? '📋 所有訂單' : '📋 我的訂單' }}</h3>
+        <h3 style="margin: 0;">{{ isAdmin ? ' 所有訂單' : ' 我的訂單' }}</h3>
         
         <!-- Admin Filters -->
         <div v-if="isAdmin" style="display: flex; gap: 12px;">
@@ -151,12 +151,13 @@
                   style="width: auto; padding: 8px 12px;"
                   :value="order.orderStatus"
                   @change="updateStatus(order.orderId, $event.target.value)"
+                  :disabled="order.orderStatus === 3 || order.orderStatus === -1"
                 >
-                  <option value="0">備貨中</option>
-                  <option value="1">運送中</option>
-                  <option value="2">已到達</option>
-                  <option value="3">已取貨</option>
-                  <option value="-1">已取消</option>
+                  <option value="0" :disabled="order.orderStatus > 0">備貨中</option>
+                  <option value="1" :disabled="order.orderStatus > 1">運送中</option>
+                  <option value="2" :disabled="order.orderStatus > 2">已到達</option>
+                  <option value="3" :disabled="order.orderStatus > 3">已取貨</option>
+                  <option value="-1" :disabled="order.orderStatus === 3">已取消</option>
                 </select>
               </td>
             </tr>
@@ -168,7 +169,7 @@
     <!-- Success Modal -->
     <div v-if="showSuccess" class="modal-overlay" @click.self="showSuccess = false">
       <div class="modal" style="text-align: center;">
-        <h3>✅ 訂單成立</h3>
+        <h3>訂單成立</h3>
         <p style="margin-bottom: 20px;">您的訂單已成功建立！</p>
         <button class="btn btn-primary" @click="showSuccess = false">確定</button>
       </div>
